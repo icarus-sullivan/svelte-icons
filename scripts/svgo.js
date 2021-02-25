@@ -1,4 +1,5 @@
-const SVGO = require("svgo");
+const fs = require('fs');
+const SVGO = require('svgo');
 
 const svgo = new SVGO({
   plugins: [
@@ -105,16 +106,18 @@ const svgo = new SVGO({
     },
     {
       removeAttributesBySelector: {
-        selector: "*:not(svg)",
-        attributes: ["stroke"],
+        selector: '*:not(svg)',
+        attributes: ['stroke'],
       },
     },
     {
-      removeAttrs: { attrs: "data.*" },
+      removeAttrs: { attrs: 'data.*' },
     },
   ],
 });
 
-module.exports = {
-  svgo,
+module.exports = async (file) => {
+  const contents = fs.readFileSync(file);
+  const { data } = await svgo.optimize(contents, { path: file });
+  return data;
 };
