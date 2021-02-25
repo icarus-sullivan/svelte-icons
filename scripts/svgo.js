@@ -1,4 +1,3 @@
-const fs = require('fs');
 const SVGO = require('svgo');
 
 const svgo = new SVGO({
@@ -116,8 +115,7 @@ const svgo = new SVGO({
   ],
 });
 
-module.exports = async (file) => {
-  const contents = fs.readFileSync(file);
+module.exports = async (contents, file) => {
   const { data } = await svgo.optimize(contents, { path: file });
   return data;
 };

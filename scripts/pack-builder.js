@@ -16,7 +16,9 @@ module.exports = async (config) => {
 
   const iconb = iconBuilder(dir, config);
 
-  const exportStr = await Promise.all(files.map(iconb));
+  const exportedStrings = await Promise.all(files.map(iconb));
 
-  fs.writeFileSync(path.resolve(dir, 'index.js'), exportStr.join('\n'), 'utf8');
+  const uniqueExportedStrings = exportedStrings.filter((a, i, self) => self.indexOf(a) === i);
+
+  fs.writeFileSync(path.resolve(dir, 'index.js'), uniqueExportedStrings.join('\n'), 'utf8');
 }
