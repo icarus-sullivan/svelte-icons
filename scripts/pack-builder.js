@@ -6,7 +6,7 @@ const iconBuilder = require('./icon-builder');
 
 module.exports = async (config) => {
   const root = process.cwd();
-  const dir = path.resolve(root, 'dist', config.id);
+  const dir = path.resolve(root, config.id);
   
   fs.removeSync(dir);
   fs.ensureDirSync(dir);
