@@ -20,5 +20,5 @@ module.exports = (contents) => {
 
   const svgAttrs = Object.entries(attrs).map(([k, v]) => `${k}="${v}"`).join(' ');
   const childContent = $('svg').html();
-  return `<svg ${svgAttrs}>${childContent}</svg>`;
+  return `<script>import { createEventDispatcher } from 'svelte';const dispatch = createEventDispatcher();let className = '';export { className as class };</script><svg ${svgAttrs} class={className} on:click={(e) => dispatch('click', e)}>${childContent}</svg>`;
 }
