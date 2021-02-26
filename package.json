@@ -6,6 +6,7 @@
   "author": "Chris Sullivan <chrissullivan.dev@gmail.com>",
   "dependencies": {},
   "scripts": {
+    "prepare": "yarn build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "build": "node scripts/build.js"
