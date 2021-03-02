@@ -6,6 +6,10 @@ module.exports = (contents) => {
   const $ = cheerio.load(contents, { xmlMode: true });
 
   const { attribs } = $('svg')[0];
+
+  delete attribs['class'];
+  delete attribs['style'];
+
   const attrs = {
     stroke: 'currentColor',
     fill: 'currentColor',
