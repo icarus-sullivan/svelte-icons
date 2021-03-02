@@ -4,14 +4,15 @@
   "main": "lib/index.js",
   "license": "MIT",
   "author": "Chris Sullivan <chrissullivan.dev@gmail.com>",
-  "dependencies": {},
   "scripts": {
-    "prepare": "yarn build",
+    "postinstall": "./scripts/clone.sh",
+    "clean": "node scripts/clean.js",
+    "prepare": "node ./scripts/pack_creator.js",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "build": "node scripts/build.js"
+    "lint:fix": "eslint . --fix"
   },
   "devDependencies": {
+    "bootstrap-icons": "^1.4.0",
     "cheerio": "^1.0.0-rc.5",
     "eslint": "^7.6.0",
     "eslint-config-airbnb-base": "^14.2.0",

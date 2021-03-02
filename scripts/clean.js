@@ -1,13 +1,12 @@
+const configs = require('./config');
+const path = require('path');
 const fs = require('fs-extra');
 
-const files = [
-  'fi',
-  'md',
-  'lib'
+const CWD = process.cwd();
+
+const clean_directories = [
+  ...configs.map((it) => it.id),
+  'lib',
 ];
 
-for (const file of files)  {
-  if (fs.existsSync(file)) {
-    fs.rmdirSync(file);
-  }
-}
+clean_directories.map((file) => fs.removeSync(path.resolve(CWD, file)));
