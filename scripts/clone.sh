@@ -13,3 +13,7 @@ git clone https://github.com/astrit/css.gg node_modules/cssgo
 # boxicons
 rm -rf node_modules/boxicons ; mkdir node_modules/boxicons
 git clone https://github.com/atisawd/boxicons node_modules/boxicons
+
+# icomoon
+rm -rf node_modules/icomoon ; mkdir node_modules/icomoon
+git clone https://github.com/Keyamoon/IcoMoon-Free node_modules/icomoon

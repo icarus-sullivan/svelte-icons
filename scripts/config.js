@@ -44,6 +44,26 @@ module.exports = [
     ],
   },
   {
+    id: "si",
+    name: "Simple Icons",
+    files: ['node_modules/simple-icons/icons/*.svg'],
+    url: "https://simpleicons.org/",
+    license: "CC0 1.0 Universal",
+    licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+  },
+  {
+    id: "im",
+    name: "IcoMoon Free",
+    files: [
+      {
+        pattern: 'node_modules/icomoon/SVG/*.svg',
+        formatter: (name) => name.slice(3),
+      },
+    ],
+    url: "https://github.com/Keyamoon/IcoMoon-Free",
+    license: "CC BY 4.0 License",
+  },
+  {
     id: 'bx',
     name: 'BoxIcons',
     files: [

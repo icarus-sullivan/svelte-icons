@@ -26,11 +26,18 @@
     "material-design-icons": "^3.0.1",
     "pascalcase": "^1.0.0",
     "prettier": "^2.0.5",
+    "simple-icons": "^4.13.0",
     "svgo": "1.3.2"
   },
   "files": [
     "fi/*",
     "md/*",
-    "index.js"
+    "lib/*",
+    "vsc/*",
+    "cg/*",
+    "bx/*",
+    "bs/*",
+    "im/*",
+    "si/*"
   ]
 }
