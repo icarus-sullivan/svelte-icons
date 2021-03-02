@@ -2,7 +2,7 @@ const path = require('path');
 const pascal = require('pascalcase');
 const fs = require('fs-extra');
 
-const withDefaults = require('./with-defaults');
+const withDefaults = require('./icon-creator');
 const svgo = require('./svgo');
 
 const DEFAULT_FORMATTER = pascal;

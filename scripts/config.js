@@ -17,4 +17,28 @@ module.exports = [
     files: ['node_modules/material-design-icons/*/svg/production/*_24px.svg'],
     formatter: (name) => name.replace(/Ic(\w+)24px/i, '$1'),
   },
+  {
+    id: "bx",
+    name: "BoxIcons",
+    files: ['node_modules/boxicons/svg/regular/*.svg'],
+    formatter: (name) => name.replace('bx', ''),
+    url: "https://github.com/atisawd/boxicons",
+    license: "CC BY 4.0 License",
+  },
+  {
+    id: "cg",
+    name: "css.gg",
+    files: ['node_modules/cssgo/icons/svg/*.svg'],
+    url: "https://github.com/astrit/css.gg",
+    license: "MIT",
+    licenseUrl: "https://opensource.org/licenses/MIT",
+  },
+  {
+    id: 'vsc',
+    name: 'VS Code Icons',
+    url: 'https://github.com/microsoft/vscode-codicons',
+    license: "CC BY 4.0",
+      licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
+    files: ['node_modules/vscode/src/icons/*.svg']
+  },
 ];

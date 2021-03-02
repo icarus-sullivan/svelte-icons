@@ -1,6 +1,6 @@
 {
   "name": "svelte-iconz",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "lib/index.js",
   "license": "MIT",
   "author": "Chris Sullivan <chrissullivan.dev@gmail.com>",

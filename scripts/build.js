@@ -4,13 +4,17 @@ const fs = require('fs');
 
 const main = [];
 
+const createPack = async (config) => {
+  if (config.ignore) return '';
+
+  await packBuilder(config);
+  return `export * from '../${config.id}';`;
+};
+
 (async () => {
   !fs.existsSync('lib') && fs.mkdirSync('lib');
 
-  for (const config of configs) {
-    await packBuilder(config);
-    main.push(`export * from '../${config.id}';`);
-  }
+  const main = await Promise.all(configs.map(createPack));
 
   fs.writeFileSync(
     'lib/index.js',
