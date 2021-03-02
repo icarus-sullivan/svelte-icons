@@ -1,11 +1,10 @@
 {
   "name": "svelte-iconz",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "lib/index.js",
   "license": "MIT",
   "author": "Chris Sullivan <chrissullivan.dev@gmail.com>",
   "scripts": {
-    "postinstall": "./scripts/clone.sh",
     "clean": "node scripts/clean.js",
     "prepare": "node ./scripts/pack_creator.js",
     "lint": "eslint .",
