@@ -15,8 +15,8 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - run: |
-          yarn --frozen-lockfile
-          ./scripts/clone.sh
-          yarn publish
+          ./scripts/build.sh
+          cd build
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

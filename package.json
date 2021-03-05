@@ -1,12 +1,11 @@
 {
-  "name": "svelte-iconz",
-  "version": "0.0.7",
+  "name": "svelte-icons-build",
+  "version": "0.0.8",
   "main": "lib/index.js",
   "license": "MIT",
   "author": "Chris Sullivan <chrissullivan.dev@gmail.com>",
   "scripts": {
-    "clean": "node scripts/clean.js",
-    "prepare": "node ./scripts/pack_creator.js",
+    "build": "./scripts/build.sh",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },

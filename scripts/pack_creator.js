@@ -1,15 +1,17 @@
 
-const configs = require('./config');
+const { output, packages } = require('./config');
 const path = require('path');
 const fs = require('fs-extra');
 const pascal = require('pascalcase');
 const glob = require('glob').sync;
 const icon_creator = require('./icon_creator');
 
-const CWD = process.cwd();
+const create_npm_package = require('./package-creator');
+
+const BUILD_DIR = path.resolve(process.cwd(), output);
 
 const pack_directory_create = (config) => {
-  const dir = path.resolve(CWD, config.id);
+  const dir = path.resolve(BUILD_DIR, config.id);
 
   fs.removeSync(dir);
   fs.ensureDirSync(dir);
@@ -70,11 +72,13 @@ const pack_create = async (config) => {
 
 
 (async () => {
-  !fs.existsSync('lib') && fs.mkdirSync('lib');
+  !fs.existsSync(BUILD_DIR) && fs.mkdirSync(BUILD_DIR);
 
-  const exports = await Promise.all(configs.map(pack_create));
+  const exports = await Promise.all(packages.map(pack_create));
 
-  const packs_index_file = path.resolve('lib', 'index.js');
+  const packs_index_file = path.resolve(BUILD_DIR, 'index.js');
   fs.writeFileSync(packs_index_file, exports.join('\n'), 'utf8');
+
+  create_npm_package({ BUILD_DIR });
 })();
 
