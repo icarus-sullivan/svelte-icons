@@ -15,14 +15,8 @@ const icon_sanitize_contents = async ({ config, file }) => {
 const icon_build = (contents) => {
   const { svg_attributes, svg_contents } = cheerio(contents);
 
-  return `<style>
-  svg { min-width: 1em; min-height: 1em; }  
-</style>
-<script>
-  let className = '';
-  export { className as class };
-</script>
-<svg ${svg_attributes} class={className} on:click>${svg_contents}</svg>`
+  return `<script>let className = '';export { className as class };</script>
+<svg ${svg_attributes} class={className} style="min-width: 1em; min-height: 1em" on:click>${svg_contents}</svg>`
 };
 
 

@@ -64,10 +64,16 @@ const pack_create = async (config) => {
     files.map((options) => icon_creator({ config, dir, ...options }))
   );
 
-  const pack_index_file = path.resolve(dir, 'index.js');
-  fs.writeFileSync(pack_index_file, exports.join('\n'), 'utf8');
+  // const { files: _, ...rest } = config;
+  // exports.push(`export default ${JSON.stringify(rest)}`);
 
-  return `export * from '../${config.id}';`;
+  // ensure uniqueness
+  const unique_exports = exports.filter((a, i, self) => self.indexOf(a) === i);
+
+  const pack_index_file = path.resolve(dir, 'index.js');
+  fs.writeFileSync(pack_index_file, unique_exports.join('\n'), 'utf8');
+
+  return `export * from './${config.id}';`;
 };
 
 

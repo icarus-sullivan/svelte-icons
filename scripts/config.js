@@ -7,7 +7,7 @@ module.exports = {
       files: ['node_modules/ionicons/src/svg/*.svg'],
       url: "https://github.com/ionic-team/ionicons",
       license: "MIT",
-      licenseUrl: "https://github.com/ionic-team/ionicons/blob/master/LICENSE",
+      license_url: "https://github.com/ionic-team/ionicons/blob/master/LICENSE",
     },
     {
       id: 'bs',
@@ -28,7 +28,7 @@ module.exports = {
       ],
       url: 'https://github.com/twbs/icons',
       license: 'MIT',
-      licenseUrl: 'https://opensource.org/licenses/MIT',
+      license_url: 'https://opensource.org/licenses/MIT',
     },
     {
       id: 'fi',
@@ -43,7 +43,7 @@ module.exports = {
       name: 'Material Design icons',
       url: 'http://google.github.io/material-design-icons/',
       license: 'Apache License Version 2.0',
-      licenseUrl:
+      license_url:
         'https://github.com/google/material-design-icons/blob/master/LICENSE',
       files: [
         {
@@ -59,7 +59,7 @@ module.exports = {
       files: ['node_modules/simple-icons/icons/*.svg'],
       url: "https://simpleicons.org/",
       license: "CC0 1.0 Universal",
-      licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+      license_url: "https://creativecommons.org/publicdomain/zero/1.0/",
     },
     {
       id: "im",
@@ -91,14 +91,14 @@ module.exports = {
       files: ['node_modules/cssgo/icons/svg/*.svg'],
       url: 'https://github.com/astrit/css.gg',
       license: 'MIT',
-      licenseUrl: 'https://opensource.org/licenses/MIT',
+      license_url: 'https://opensource.org/licenses/MIT',
     },
     {
       id: 'vsc',
       name: 'VS Code Icons',
       url: 'https://github.com/microsoft/vscode-codicons',
       license: 'CC BY 4.0',
-      licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
+      license_url: 'https://creativecommons.org/licenses/by/4.0/',
       files: ['node_modules/vscode/src/icons/*.svg'],
     },
   ]
