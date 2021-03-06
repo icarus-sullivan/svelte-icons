@@ -1,7 +1,10 @@
 {
-  "name": "svelte-icons-build",
-  "version": "0.0.12",
-  "main": "lib/index.js",
+  "name": "svelte-iconz",
+  "version": "0.0.16",
+  "main": "build/index.js",
+  "files": [
+    "build/*"
+  ],
   "license": "MIT",
   "author": "Chris Sullivan <chrissullivan.dev@gmail.com>",
   "scripts": {
@@ -29,6 +32,5 @@
   },
   "workspaces": [
     "svelte-iconz-navigator"
-  ],
-  "private": true
+  ]
 }

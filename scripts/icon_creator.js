@@ -6,19 +6,17 @@ const svgo = require('../utils/svgo');
 const icon_sanitize_contents = async ({ config, file }) => {
   let contents = fs.readFileSync(file);
   if (config.sanitize) {
-    contents = await svgo(contents, file); 
+    contents = await svgo(contents, file);
   }
 
   return contents;
-}
+};
 
 const icon_build = (contents) => {
   const { svg_attributes, svg_contents } = cheerio(contents);
 
-  return `<script>let className = '';export { className as class };</script>
-<svg ${svg_attributes} class={className} style="min-width: 1em; min-height: 1em" on:click>${svg_contents}</svg>`
+  return `<svg {...$$props} ${svg_attributes} style="min-width: 1em; min-height: 1em" on:click>${svg_contents}</svg>`;
 };
-
 
 module.exports = async ({ config, dir, file, name }) => {
   const outfile = path.resolve(dir, `${name}.svelte`);
@@ -28,4 +26,4 @@ module.exports = async ({ config, dir, file, name }) => {
   fs.writeFileSync(outfile, output, 'utf8');
 
   return `export { default as ${name} } from './${name}.svelte';`;
-}
+};

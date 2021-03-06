@@ -7,21 +7,21 @@ module.exports = (contents) => {
 
   const { attribs } = $('svg')[0];
 
-  delete attribs['class'];
-  delete attribs['style'];
+  delete attribs.class;
+  delete attribs.style;
 
   const attrs = {
     stroke: 'currentColor',
     fill: 'currentColor',
-    ['stroke-width']: 0,
+    'stroke-width': 0,
     ...attribs,
     height: '1em',
     width: '1em',
-    xmlns: "http://www.w3.org/2000/svg"
+    xmlns: 'http://www.w3.org/2000/svg',
   };
 
   return {
     svg_attributes: Object.entries(attrs).map(keyValueToAttributes).join(' '),
-    svg_contents: $('svg').html().trim()
+    svg_contents: $('svg').html().trim(),
   };
-}
+};
